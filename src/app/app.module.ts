@@ -27,6 +27,7 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { UserComponent } from './user/user.component';
 import { LoanapplicationdetailsComponent } from './loanapplicationdetails/loanapplicationdetails.component';
 import { ViewloanComponent } from './viewloan/viewloan.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ViewloanComponent } from './viewloan/viewloan.component';
     UserComponent,
     LoanApplicationComponent,
     LoanapplicationdetailsComponent,
-    ViewloanComponent
+    ViewloanComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
