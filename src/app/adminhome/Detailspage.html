@@ -1,0 +1,74 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 pk1">
+      <div class="contact-info">
+        <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image" />
+        <h2>Vehicle Loan Management</h2>
+        <h4>Loan, User Details</h4>
+      </div>
+    </div>
+    <div class="col-md-9 pk mt-5">
+
+<table class="mt-5 table">
+  <thead  class="thead-dark"> 
+        <th>colname</th>
+        <th>Vehicleloan</th>
+        <th>colname</th>
+        <th>user</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>loan-id</td>
+          <td>{{loan_app1.loan_applicaton_id}}</td>
+          <td>user-email</td>
+          <td>{{loan_app1.user.user_email}}</td>
+        </tr>
+        <tr>
+          <td>Tenure</td>
+          <td>{{loan_app1.loan_tenure}}</td>
+          <td>Name</td>
+          <td>{{loan_app1.user.user_full_Name}}</td>
+        </tr>
+        <tr>
+          <td>loanAmmount</td>
+          <td>{{loan_app1.loan_amount}}</td>
+          <td>Age</td>
+          <td>{{loan_app1.user.user_age}}</td>
+        </tr>
+        <tr>
+          <td>VehicleBrand</td>
+          <td>{{loan_app1.vehicle_brand}}</td>
+          <td>Gender</td>
+          <td>{{loan_app1.user.user_gender}}</td>
+        </tr>
+        <tr>
+          <td>VehicleModel</td>
+          <td>{{loan_app1.vehicle_model}}</td>
+          <td>EmpType</td>
+          <td>{{loan_app1.user.user_employement_type}}</td>
+        </tr>
+        <tr>
+          <td>VehicleTypel</td>
+          <td>{{loan_app1.vehicle_type}}</td>
+          <td>Salary</td>
+          <td>{{loan_app1.user.user_salary}}</td>
+        </tr>
+        <tr>
+          <td>VehicleExShowRoomPrice</td>
+          <td>{{loan_app1.vehicle_exshowroom_price}}</td>
+          <td>Addhar_No</td>
+          <td>{{loan_app1.user.user_adhar_no}}</td>
+        </tr>
+        <tr>
+          <td>VehicleOnRoadPrice</td>
+          <td>{{loan_app1.vehicel_on_road_price}}</td>
+          <td>Pan_No</td>
+          <td>{{loan_app1.user.user_pan_no}}</td>
+        </tr>
+        <tr>
+          <td colspan="2"><button type="button" class="btn btn-success"  (click)="approvedStatus()">Approve</button></td>
+          <td colspan="2"><button type="button" class="btn btn-danger" (click)="rejectedStatus()">Reject</button></td>
+        </tr>
+      </tbody>
+    </table> 
+  </div>

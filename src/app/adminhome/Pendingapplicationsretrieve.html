@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 pk1">
+      <div class="contact-info">
+        <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image" />
+        <h2>Vehicle Loan Management</h2>
+        <h4>Pending Loan Applications</h4>
+      </div>
+    </div>
+    <div class="col-md-9 pk mt-5">
+      <table class="mt-5 table">
+        <thead class="thead-dark">
+          <tr>
+            <th>application_status_id</th>
+            <th>status</th>
+            <th>loan_applicaton_id</th>
+           
+          </tr>
+        </thead>
+        <tbody *ngFor="let val of pendingapplications">
+          <tr>
+            <td>{{val.application_status_id}}</td>
+            <td>{{val.status}}</td>
+             <td (click)="onSelectId(val.laon_app,val.application_status_id)"><a class="btn btn-xs btn-white" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click to view details" href="javascript:;" ><i class="fas fa-eye mr-1"></i>{{val.laon_app.loan_applicaton_id}}</a></td>
+          
+           <!-- <td><a class="btn btn-xs btn-white" routerLink="/selectedId/{{val.laon_app.loan_applicaton_id}}/{{val.application_status_id}}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click to view details" href="javascript:;" ><i class="fas fa-eye mr-1"></i>{{val.laon_app.loan_applicaton_id}}</a></td></tr>-->
+        
+        </tbody>
+       
+    <!-- </div>
+  </div>
+ </div>  -->
+
+ 

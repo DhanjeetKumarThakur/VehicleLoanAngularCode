@@ -1,3 +1,5 @@
+import { LoanApplicationStatus } from "./LoanApplicationStatus";
+
 export class ApprovedLoan {
     constructor(
         public emi_amount:number,
@@ -8,4 +10,6 @@ export class ApprovedLoan {
     {
 
     }
+   
+
 }

@@ -18,6 +18,13 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserComponent } from './user/user.component';
 import { LoanApplicationComponent } from './loan-application/loan-application.component';
+import { AdminhomeComponent } from './adminhome/adminhome.component';
+import { ApprovedApplicationsComponent } from './adminhome/ApprovedLoanApplications';
+import { DetailsComponent } from './adminhome/DisplayDetails';
+import { PendingApplicationsComponent } from './adminhome/PendingLoans';
+import { RejectedApplicationsComponent } from './adminhome/RejectedLoans';
+import { LoanApplicationsComponent } from './adminhome/RetriveLoanApplications';
+import { ApprovedDetailsComponent } from './approved-details/approved-details.component';
 import { ViewloanComponent } from './viewloan/viewloan.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 
@@ -48,7 +55,22 @@ const routes: Routes = [
         ]
       }
     ]
-  }
+  },
+  {path:'adminhome',component:AdminhomeComponent,
+  children:[
+    {path:'loanapplications',component:LoanApplicationsComponent},
+    {path:'pendingloans',component:PendingApplicationsComponent},
+    {path:'approvedloans',component:ApprovedApplicationsComponent},
+    {path:'rejectedloans',component:RejectedApplicationsComponent}
+   
+    // {path:'selectedId/:id/:status_ID',component:DetailsComponent},
+    // {path:'emidetails/:id',component:ApprovedDetailsComponent}
+  ]
+  },
+  {path:'homepages',component:HomeComponent},
+  {path:'selectedId/:id/:status_ID',component:DetailsComponent},
+  {path:'emidetails/:id',component:ApprovedDetailsComponent}
+
 
 ];
 

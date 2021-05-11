@@ -1,0 +1,48 @@
+ <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-2 pk1">
+              <div class="contact-info">
+                  <img src="https://image.ibb.co/kUASdV/contact-image.png" alt="image"/>
+                  <h2>Vehicle Loan Management</h2>
+                  <h4>All Loan Applications</h4>
+              </div>
+          </div>
+          <div class="col-md-10 pk mt-5">
+            <!-- <label>Search feild</label>
+            <input placeholder="example@gmail.com" [(ngModel)]="userSearchEmail" (keyup)="search()" (keydown)="search()"/> -->
+            <table class="mt-5 table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Application_id</th>
+                  <th scope="col">User_email</th>
+                  <th scope="col">Loan_tenure</th>
+                  <th scope="col">loan_amount</th>
+                  <th scope="col">vehicle_brand</th>
+                  <th scope="col">vehicle_model</th>
+                  <!-- <th scope="col">vehicle_type</th> -->
+                  <th scope="col">vehicle_exshowroom_price</th>
+                  <th scope="col">vehicle_on_road_price</th>
+                  
+                </tr>
+              </thead>
+              <!-- <p *ngIf="filterdApplications.length==0" class="text-center" >No data found</p> -->
+              <tbody *ngFor="let val of applications">
+                <tr>
+                  <td>{{val.loan_applicaton_id}}</td>
+                  <td>{{val.user.user_email}}</td>
+                  <td>{{val.loan_tenure}}</td>
+                  <td>{{val.loan_amount}}</td>
+                  <td>{{val.vehicle_brand}}</td>
+                  <td>{{val.vehicle_model}}</td>
+                  <td>{{val.vehicle_exshowroom_price}}</td>
+                  <td>{{val.vehicel_on_road_price}}</td>
+                </tr>
+              </tbody>
+              </table>
+              </div>
+              </div>
+              </div>
+              
+
+          
+       

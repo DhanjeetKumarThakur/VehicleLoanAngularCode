@@ -1,6 +1,6 @@
 export class User{
     constructor(
-        public user_email:string,
+         user_email:string,
         public user_password:string,
         public user_full_Name:string,
         public user_gender: string,
@@ -14,9 +14,11 @@ export class User{
         public user_salary: number,
         public user_adhar_no : string,
         public user_pan_no:string
-    ){
+    ){}
+    user_email:any;
+    
         
-    }
+    
         // user_email:any;
         // user_password:any,
         // public user_full_Name:string,

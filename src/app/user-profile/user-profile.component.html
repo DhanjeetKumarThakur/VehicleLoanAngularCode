@@ -135,7 +135,12 @@
                     </fieldset>
                         <div class="form-group shadow p-3 mb-3 bg-white rounded">
                             <label>Full Name</label>
-                            <input formControlName="full_Name" type="text" class="form-control" required [(ngModel)]="userdetails.user_full_Name"> 
+                            <input formControlName="full_Name" type="text" class="form-control" [(ngModel)]="userdetails.user_full_Name"> 
+                        </div>
+                        <div *ngIf="user.controls['full_Name'].hasError('required')">
+                            <span [ngStyle]="{'margin-left': '40px','color':'red','backgroundColor':'Yellow'}">
+                                Please  enter the FullName
+                            </span>
                         </div>
                         <div class="shadow p-3 mb-3 bg-white rounded">
                             <label>Gender</label>
@@ -153,16 +158,18 @@
 
                         <div class="form-group shadow p-3 mb-3 bg-white rounded">
                             <label>Age</label>
-                            <input formControlName="age" type="number" class="form-control" required [(ngModel)]="userdetails.user_age"> 
-                            <ul class="font-size-1">
-                                <li>Minimum 18 years age is required</li>
-                            </ul>
+                            <input formControlName="age" type="number" class="form-control" [(ngModel)]="userdetails.user_age"> 
+                            <div *ngIf="user.controls['full_Name'].hasError('required')">
+                                <span [ngStyle]="{'margin-left': '40px','color':'red','backgroundColor':'Yellow'}">
+                                    Please  enter the FullName
+                                </span>
+                            </div>
                         </div>
                         <div class="form-group shadow p-3 mb-3 bg-white rounded">
                             <label>Phone No.</label>
                             <input formControlName="phoneno" type="number" class="form-control" required [(ngModel)]="userdetails.user_phone_Number"> 
                          </div>
-                         <div *ngIf="user.controls['email'].hasError('required')">
+                         <div *ngIf="user.controls['phoneno'].hasError('required')">
                              <span [ngStyle]="{'margin-left': '40px','color':'red'}">
                              Phone Number cannot be Empty
                              </span>
@@ -171,19 +178,38 @@
                             <label>Address</label>
                             <textarea class="form-control" formControlName="addr" id="exampleTextarea" required [(ngModel)]="userdetails.user_address" rows="3"></textarea>
                         </div>
+                        <div *ngIf="user.controls['addr'].hasError('required')">
+                            <span [ngStyle]="{'margin-left': '40px','color':'red'}">
+                            Please Enter Address
+                            </span>
+                       </div>
                         <div class="form-group shadow p-3 mb-3 bg-white rounded">
                             <label>State</label>
                             <input formControlName="state" type="text" class="form-control" required [(ngModel)]="userdetails.user_state"> 
                         </div>
+                        <div *ngIf="user.controls['state'].hasError('required')">
+                            <span [ngStyle]="{'margin-left': '40px','color':'red'}">
+                            Enter your state
+                            </span>
+                       </div>
                         <div class="form-group shadow p-3 mb-3 bg-white rounded">
                             <label>City</label>
                             <input formControlName="city" type="text" class="form-control" required [(ngModel)]="userdetails.user_city"> 
                         </div>
+                        <div *ngIf="user.controls['city'].hasError('required')">
+                            <span [ngStyle]="{'margin-left': '40px','color':'red'}">
+                            Enter your city
+                            </span>
+                       </div>
                         <div class="form-group shadow p-3 mb-3 bg-white rounded">
                             <label>Pin Code</label>
                             <input formControlName="pin" type="text" class="form-control" required [(ngModel)]="userdetails.user_pincode"> 
                         </div> 
-
+                        <div *ngIf="user.controls['pin'].hasError('required')">
+                            <span [ngStyle]="{'margin-left': '40px','color':'red'}">
+                            Enter your pin
+                            </span>
+                       </div>
                         <div class="shadow p-3 mb-3 bg-white rounded">
                             <label>Employement Type</label>
                         <div class="form-check ">
@@ -203,14 +229,29 @@
                             <label>Salary per month*</label>
                             <input formControlName="salary" type="number" class="form-control" required [(ngModel)]="userdetails.user_salary"> 
                         </div>
+                        <div *ngIf="user.controls['salary'].hasError('required')">
+                            <span [ngStyle]="{'margin-left': '40px','color':'red'}">
+                            Enter your salary
+                            </span>
+                       </div>
                         <div class="form-group shadow p-3 mb-3 bg-white rounded">
                             <label>Aadhar</label>
                             <input formControlName="aadhar" type="text" class="form-control"  required [(ngModel)]="userdetails.user_adhar_no"> 
                         </div>
+                        <div *ngIf="user.controls['aadhar'].hasError('required')">
+                            <span [ngStyle]="{'margin-left': '40px','color':'red'}">
+                            Enter your aadhar
+                            </span>
+                       </div>
                         <div class="form-group shadow p-3 mb-3 bg-white rounded">
                             <label>Pan Number</label>
                             <input formControlName="pan" type="text" class="form-control" required [(ngModel)]="userdetails.user_pan_no" > 
-                        </div><br>
+                        </div>
+                        <div *ngIf="user.controls['pan'].hasError('required')">
+                            <span [ngStyle]="{'margin-left': '40px','color':'red'}">
+                            Enter your pan number
+                            </span>
+                       </div><br>
                         <button type="button" (click)="onSubmit()" class="btn btn-success">Update</button>
                     </form>
                     <div class="alert alert-success" *ngIf=popupVisible>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TokenStorageService } from '../_services/token-storage.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class Home1Component implements OnInit {
   showModeratorBoard = false;
   username?: string;
 
-  constructor(private tokenStorageService: TokenStorageService) { }
+  constructor(private tokenStorageService: TokenStorageService,private route: ActivatedRoute,private router: Router) { }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
@@ -37,5 +38,7 @@ export class Home1Component implements OnInit {
     this.tokenStorageService.signOut();
     window.location.reload();
   }
-
+  showAdminHome(){
+    this.router.navigate(['adminhome'], {relativeTo: this.route});
+  }
 }

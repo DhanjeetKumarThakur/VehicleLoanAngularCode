@@ -26,9 +26,9 @@ export class UserProfileComponent implements OnInit {
     addr : new FormControl('',[Validators.required]),
     state : new FormControl('',[Validators.required]),
     city : new FormControl('',[Validators.required]),
-    pin : new FormControl(''),
+    pin : new FormControl('',[Validators.required]),
     emp_type: new FormControl(''),
-    salary: new FormControl(''),
+    salary: new FormControl('',[Validators.required]),
     aadhar : new FormControl('',[Validators.required]),
     pan: new FormControl('',[Validators.required])
 
